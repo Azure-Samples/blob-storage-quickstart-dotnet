@@ -1,6 +1,6 @@
-# azd-create-storage-account
+# Create and connect to an Azure Blob Storage account
 
-`storage-quickstart-dotnet` is a demo project showcasing how to create an Azure Storage Account on Azure using [Azure Developer CLI](https://learn.microsoft.com/en-us/azure/developer/azure-developer-cli/overview)(azd) and connect to it locally using a console application.
+`storage-quickstart-dotnet` is a demo project showcasing how to create an Azure Storage Account on Azure using [Azure Developer CLI](https://learn.microsoft.com/en-us/azure/developer/azure-developer-cli/overview)(azd) and connect to it locally using a console application to perform essential tasks.
 
 ## Prerequisites
 
@@ -10,7 +10,7 @@ The following prerequisites are required to use this application.  Please ensure
   - Windows:
 
     ```powershell
-    powershell -c "powershell -ex AllSigned -c "Invoke-RestMethod 'https://aka.ms/install-azd.ps1' | Invoke-Expression""
+    winget install microsoft.azd
     ```
 
   - Linux/MacOS:
@@ -18,6 +18,11 @@ The following prerequisites are required to use this application.  Please ensure
     ```bash
     curl -fsSL https://aka.ms/install-azd.sh | bash 
     ```
+
+  - Mac:
+      ```bash
+      brew tap azure/azd && brew install azd
+      ```  
 
 - [.Net 8.0](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
 
@@ -27,30 +32,34 @@ The fastest way for you to get this application up and running on Azure is to us
 
 > Notes: you can run the project in your local environment or [DevContainer](https://code.visualstudio.com/docs/devcontainers/containers).
 
-Run the following commands to initialize the project, provision Azure resources, and deploy the application code.
+1. Run the following commands to initialize the project, provision Azure resources, and deploy the application code.
 
-```bash
-# Download the repo assets from GitHub and initialize azd locally
-azd init --template Azure-Samples/azd-create-storage-account
+    ```bash
+    # Download the repo assets from GitHub and initialize azd locally
+    azd init --template Azure-Samples/azd-create-storage-account
+    
+    # Login to azure
+    azd auth login
+    
+    # Provision and deploy to Azure
+    azd up
+    ```
 
-# Login to azure
-azd auth login
+2. You will be prompted for the following information:
 
-# Provision and deploy to Azure
-azd up
-```
+    - `Environment Name`: This will be used as a prefix for all your Azure resources, make sure it is globally unique and under 15 characters.
+    - `Azure Subscription`: The Azure Subscription where your resources will be deployed.
+    - `Azure Location`: The Azure location where your resources will be deployed
+    
+    The command creates a storage account in Azure for you to use. Click on the link in the console output to view the resource group in Azure.
 
-You will be prompted for the following information:
+3. Copy the name of the storage account that appears in the output logs of the `azd up` command. In the `src` folder of the project, open the `Program.cs` file and paste the storage account name in the `<storage-account-name>` placeholder.
 
-- `Environment Name`: This will be used as a prefix for all your Azure resources, make sure it is globally unique and under 15 characters.
-- `Azure Subscription`: The Azure Subscription where your resources will be deployed.
-- `Azure Location`: The Azure location where your resources will be deployed
-
-When you are finished, you will have a storage account created in Azure. Click on the link in the console output to view the resource group in Azure.
+4. Run the project and observe the output logs as the app performs basic blob storage tasks, such as uploading and downloading files.
 
 ### Configuring Github Workflow
 
-This will allow you to configure a service principal in azure and federate it to your github account. After you finish the configuration, you can see a set of variables set in the repository.
+Run the following command to setup a GitHub actions workflow to create the storage account using an automated pipeline. This command also configures authentication between GitHub Actions and Azure, and can help you set up a remote repository for the cloned template.
 
 ```bash
 azd pipeline config
