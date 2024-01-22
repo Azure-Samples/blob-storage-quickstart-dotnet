@@ -1,6 +1,6 @@
 # azd-create-storage-account
 
-azd-create-storage-account is a demo project showcasing how to create an Azure Storage Account on Azure using [Azure Developer CLI](https://learn.microsoft.com/en-us/azure/developer/azure-developer-cli/overview)(azd).
+`storage-quickstart-dotnet` is a demo project showcasing how to create an Azure Storage Account on Azure using [Azure Developer CLI](https://learn.microsoft.com/en-us/azure/developer/azure-developer-cli/overview)(azd) and connect to it locally using a console application.
 
 ## Prerequisites
 
@@ -19,23 +19,19 @@ The following prerequisites are required to use this application.  Please ensure
     curl -fsSL https://aka.ms/install-azd.sh | bash 
     ```
 
-- [.Net SDK 7.0](https://dotnet.microsoft.com/en-us/download/dotnet/7.0)
-
-- [Git (2.36.1+)](https://git-scm.com/)
-
-- [Docker](https://docs.docker.com/get-docker/)
+- [.Net 8.0](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
 
 ### Quickstart
 
 The fastest way for you to get this application up and running on Azure is to use the `azd up` command. This single command will create and configure all necessary Azure resources.
 
->Notes: you can run the project in your local environment or [DevContainer](https://code.visualstudio.com/docs/devcontainers/containers).
+> Notes: you can run the project in your local environment or [DevContainer](https://code.visualstudio.com/docs/devcontainers/containers).
 
 Run the following commands to initialize the project, provision Azure resources, and deploy the application code.
 
 ```bash
 # Download the repo assets from GitHub and initialize azd locally
-azd init -t Azure-Samples/azd-create-storage-account
+azd init --template Azure-Samples/azd-create-storage-account
 
 # Login to azure
 azd auth login
