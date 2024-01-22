@@ -12,6 +12,8 @@ This project framework provides the following features:
 
 ## Getting Started
 
+Testing
+
 ### Prerequisites
 
 (ideally very short, if any)
