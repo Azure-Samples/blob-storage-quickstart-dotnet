@@ -1,0 +1,75 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\azdtemplates\\storage-quickstart-dotnet\\src\\src.csproj": {}
+  },
+  "projects": {
+    "C:\\azdtemplates\\storage-quickstart-dotnet\\src\\src.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\azdtemplates\\storage-quickstart-dotnet\\src\\src.csproj",
+        "projectName": "src",
+        "projectPath": "C:\\azdtemplates\\storage-quickstart-dotnet\\src\\src.csproj",
+        "packagesPath": "C:\\Users\\alexwolf\\.nuget\\packages\\",
+        "outputPath": "C:\\azdtemplates\\storage-quickstart-dotnet\\src\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\alexwolf\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://pkgs.dev.azure.com/dnceng/internal/_packaging/8.0.100-rtm.23551.15-shipping/nuget/v3/index.json": {},
+          "https://pkgs.dev.azure.com/dnceng/public/_packaging/dotnet8/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Azure.Storage.Blobs": {
+              "target": "Package",
+              "version": "[12.20.0-beta.1, )"
+            },
+            "Microsoft.Extensions.Azure": {
+              "target": "Package",
+              "version": "[1.7.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200-preview.23527.15/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
