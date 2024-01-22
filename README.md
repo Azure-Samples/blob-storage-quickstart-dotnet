@@ -1,6 +1,6 @@
 # Create and connect to an Azure Blob Storage account
 
-`storage-quickstart-dotnet` is a demo project showcasing how to create an Azure Storage Account on Azure using [Azure Developer CLI](https://learn.microsoft.com/en-us/azure/developer/azure-developer-cli/overview)(azd) and connect to it locally using a console application to perform essential tasks.
+`storage-quickstart-dotnet` is a demo project that shows how to create an Azure Storage Account using the [Azure Developer CLI](https://learn.microsoft.com/en-us/azure/developer/azure-developer-cli/overview)(azd) and connect to it locally using a console application to perform essential tasks.
 
 ## Prerequisites
 
