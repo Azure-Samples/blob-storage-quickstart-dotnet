@@ -36,7 +36,7 @@ The fastest way for you to get this application up and running on Azure is to us
 
     ```bash
     # Download the repo assets from GitHub and initialize azd locally
-    azd init --template Azure-Samples/azd-create-storage-account
+    azd init --template blob-storage-quickstart-dotnet
     
     # Login to azure
     azd auth login

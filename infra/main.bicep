@@ -54,7 +54,7 @@ module storageAccount 'core/storage/storage-account.bicep' = {
     tags: tags
     kind: 'StorageV2'
     sku: {
-      name: 'Standard_RAGRS' 
+      name: 'Standard_LRS' 
     }
   }
 }
